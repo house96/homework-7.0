@@ -1,0 +1,163 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    color: #fff;
+    background-color: #1B1F25;
+}
+
+.wrapper {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.claerfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* ==================== NAVBAR ================================ */
+
+.navbar {
+    margin-bottom: 150px;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    float: left;
+    width: 16.66%;
+    height: 80px;
+    list-style: none;
+    position: relative;
+    text-align: center;
+}
+
+.navbar a {
+    display: block;
+    text-decoration: none;
+    height: 100%;
+    line-height: 80px;
+}
+
+.navbar li:nth-child(1) {
+    background-color: #1B1F25;
+}
+
+.navbar li:nth-child(2) {
+    background-color: #e74c3c;
+}
+
+.navbar li:nth-child(3) {
+    background-color: #3498db;
+}
+
+.navbar li:nth-child(4) {
+    background-color: #9b59b6;
+}
+
+.navbar li:nth-child(5) {
+    background-color: #1BC885;
+}
+
+.navbar li:nth-child(6) {
+    background-color: #DFB816;
+}
+
+.navbar span {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    display: inline-block;
+}
+
+
+/* ==================== SLIDER ================================ */
+
+.slider {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    position: relative;
+}
+
+.slider h1 {
+    font-size: 48px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin: 0;
+    margin-bottom: 25px;
+    line-height: 92px;
+}
+
+.slider h1::after {
+    content: "";
+    width: 100px;
+    display: block;
+    border: 1px solid #fff;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.slider p {
+    font-size: 18px;
+    opacity: 0.55;
+    font-family: 'Georgia';
+}
+
+ .button {
+	position: absolute;
+	height: 50px;
+	width: 50px;
+	background-image: url('img/logo.png');
+	top: -130px;
+	right: 25px;
+}
+
+/* ============================== Media ============================ */
+
+@media screen and (max-width: 719px) {
+    .navbar li {
+        height: 60px;
+    }
+    .slider h1 {
+        font-size: 28px;
+    }
+    .slider p {
+        font-size: 16px;
+    }
+    .navbar span {
+        font-size: 0;
+    }
+    .navbar span::before {
+        display: block;
+        content: attr(data-parent);
+        font-size: 24px;
+    }
+    .button {
+     	display: none;
+     }
+}
+
+@media handheld and ( min-width: 320px) {
+    .slider h1::after {
+        width: 100px;
+        /* http://habrahabr.ru/post/107764/
+	Да, не работает. Надо проверять размеры экрана и другие свойства вместо того, чтобы определять устройство. */
+    }
+     .button {
+     	display: none;
+     }
+}
